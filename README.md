@@ -8,7 +8,18 @@ transformations, by [Eric Wong](https://github.com/riceric22)*
 
 ## Installation
 
-This package is on PyPi. Install with `pip install pytorch-fft`. 
+Ugly hack for installing on windows:
+Edit build.py, modify directories matching your configurations ( library directories and include directories ).
+
+Use followling commands:
+
+python setup.py build
+
+If thc and aten library reports error, rebuild it using [Stackoverflow answer](https://stackoverflow.com/questions/9360280/how-to-make-a-lib-file-when-have-a-dll-file-and-a-header-file)
+add argument "/machine:x64" to lib step
+
+python setup.py install
+move _th_fft.pyd from Lib\site-packages\pytorch_fft-0.14-py3.6-win-amd64.egg to Lib\site-packages\pytorch_fft-0.14-py3.6-win-amd64.egg\pytorch_fft\_ext\th_fft ( replace directory name to your configuration )
 
 ## Usage
 
